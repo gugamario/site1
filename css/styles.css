@@ -1,0 +1,196 @@
+/* styles.css */
+
+/*===============================
+  Variáveis de cor e gradiente
+=================================*/
+:root {
+  --primary:   #1a73e8;
+  --secondary: #4a4a4a;
+  --bg:        #ffffff;
+  --accent:    #f2f2f2;
+
+  /* Cores para o gradiente animado */
+  --c1: #1a73e8;
+  --c2: #23a6d5;
+  --c3: #23d5ab;
+  --c4: #e73c7e;
+}
+
+/*===============================
+  Reset e tipografia
+=================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--secondary);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/*===============================
+  Container centralizado
+=================================*/
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*===============================
+  Botão primário
+=================================*/
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background: #155ab6;
+}
+
+/*===============================
+  Hero / Cabeçalho com gradiente
+=================================*/
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  /* Layout do conteúdo */
+  text-align: center;
+  padding: 60px 0;
+
+  /* Gradiente animado */
+  background: linear-gradient(-45deg, var(--c1), var(--c2), var(--c3), var(--c4));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff; /* Texto claro sobre o gradiente */
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+/*===============================
+  Seção “Como funciona”
+=================================*/
+.how-it-works {
+  padding: 60px 0;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.step .icon {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/*===============================
+  Depoimentos
+=================================*/
+.testimonials {
+  background: var(--accent);
+  padding: 60px 20px;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial {
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial .author {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/*===============================
+  CTA final
+=================================*/
+.final-cta {
+  text-align: center;
+  padding: 60px 0;
+}
+
+/*===============================
+  Rodapé
+=================================*/
+.footer {
+  background: var(--accent);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.85rem;
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/*===============================
+  Responsividade
+=================================*/
+@media (min-width: 768px) {
+  .steps {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .step {
+    flex: 1;
+  }
+}
+
+/*===============================
+  Animação do gradiente
+=================================*/
+@keyframes gradientShift {
+  0%   { background-position:   0%  50%; }
+  50%  { background-position: 100%  50%; }
+  100% { background-position:   0%  50%; }
+}
